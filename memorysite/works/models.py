@@ -33,9 +33,9 @@ class Works(models.Model):
     )
     photo = models.ImageField(
         upload_to='photos/',
-        verbose_name='Фото',
         blank=True,
-        null=True
+        null=True,
+        verbose_name='Фото'
     )
     time_create = models.DateTimeField(
         auto_now_add=True,

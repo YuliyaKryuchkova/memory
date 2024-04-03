@@ -10,6 +10,8 @@ class WorksAdmin(admin.ModelAdmin):
         'title',
         'time_create',
         'photo',
+        'video',
+        'audio',
         # 'get_html_photo',
         'is_published'
     )
@@ -48,7 +50,7 @@ class WorksAdmin(admin.ModelAdmin):
     readonly_fields = (
         'time_create',
         'time_update',
-        'photo',
+        # 'photo',
         # 'get_html_photo'
     )
     save_on_top = True
