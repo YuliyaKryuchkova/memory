@@ -9,7 +9,8 @@ class WorksAdmin(admin.ModelAdmin):
         'id',
         'title',
         'time_create',
-        'get_html_photo',
+        'photo',
+        # 'get_html_photo',
         'is_published'
     )
     list_display_links = (
@@ -39,7 +40,7 @@ class WorksAdmin(admin.ModelAdmin):
         'photo',
         'audio',
         'video',
-        'get_html_photo',
+        # 'get_html_photo',
         'is_published',
         'time_create',
         'time_update'
@@ -47,15 +48,16 @@ class WorksAdmin(admin.ModelAdmin):
     readonly_fields = (
         'time_create',
         'time_update',
-        'get_html_photo'
+        'photo',
+        # 'get_html_photo'
     )
     save_on_top = True
 
-    def get_html_photo(self, object):
-        if object.photo:
-            return mark_safe(f"<img src='{object.photo.url}' width=50>")
-
-    get_html_photo.short_description = 'Миниатюра'
+    # def get_html_photo(self, object):
+    #     if object.photo:
+    #         return mark_safe(f"<img src='{object.photo.url}' width=50>")
+    #
+    # get_html_photo.short_description = 'Миниатюра'
 
 
 class GenreAdmin(admin.ModelAdmin):

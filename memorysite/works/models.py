@@ -17,34 +17,41 @@ class Works(models.Model):
         verbose_name='Автор'
     )
     description = models.TextField(
-        blank=True
+        blank=True,
+        verbose_name='Описание'
     )
     audio = models.FileField(
         upload_to='audio/',
+        verbose_name='Аудио',
         blank=True,
         null=True
     )
-    video = models.URLField(
-        blank=True
+    video = models.FileField(
+        blank=True,
+        verbose_name='Видео'
     )
     photo = models.ImageField(
         upload_to='photos/',
+        verbose_name='Фото',
         blank=True,
         null=True
     )
     time_create = models.DateTimeField(
         auto_now_add=True,
-        db_index=True
+        db_index=True,
+        verbose_name='Дата создания'
     )
     time_update = models.DateTimeField(
         auto_now=True,
-        db_index=True
+        db_index=True,
+        verbose_name='Дата обновления'
     )
     is_published = models.BooleanField(
         default=True
     )
     genre = models.ForeignKey(
         'Genre',
+        verbose_name='Жанр',
         on_delete=models.PROTECT,
         null=True
     )
@@ -77,4 +84,3 @@ class Genre(models.Model):
         verbose_name = 'Жанр'
         verbose_name_plural = 'Жанры'
         ordering = ['id']
-
