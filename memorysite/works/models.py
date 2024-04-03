@@ -27,6 +27,7 @@ class Works(models.Model):
         null=True
     )
     video = models.FileField(
+        upload_to='video/',
         blank=True,
         verbose_name='Видео'
     )
